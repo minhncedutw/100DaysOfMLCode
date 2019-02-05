@@ -17,8 +17,9 @@
 `loss = F.cross_entropy(outputs, target)`. So they need not use log_softmax and nll_loss.
 - Why pointnet_pytorch they do not directly use cross-entropy? 
 
-## Day 2(04March2019): Code PointNet using cross-entropy instead of log_softmax
+## Day 2(04March2019): Code PointNet using cross-entropy instead of log_softmax on pytorch framework
 
+## Day 3(05March2019): Code PointNet on fastai framework
 
 ## Questions: 
 
