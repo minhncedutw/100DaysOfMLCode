@@ -54,24 +54,20 @@ class PartDataset(data.Dataset):
             for line in f:
                 ls = line.strip().split()
                 self.cat[ls[0]] = ls[1]
-        #print(self.cat)
         if not class_choice is  None:
             self.cat = {k:v for k,v in self.cat.items() if k in class_choice}
 
         self.meta = {}
         for item in self.cat:
-            #print('category', item)
             self.meta[item] = []
             dir_point = os.path.join(self.root, self.cat[item], 'points')
             dir_seg = os.path.join(self.root, self.cat[item], 'points_label')
-            #print(dir_point, dir_seg)
             fns = sorted(os.listdir(dir_point))
             if train:
                 fns = fns[:int(len(fns) * 0.8)]
             else:
                 fns = fns[int(len(fns) * 0.8):]
 
-            #print(os.path.basename(fns))
             for fn in fns:
                 token = (os.path.splitext(os.path.basename(fn))[0])
                 self.meta[item].append((os.path.join(dir_point, token + '.pts'), os.path.join(dir_seg, token + '.seg')))
@@ -89,8 +85,6 @@ class PartDataset(data.Dataset):
                 l = len(np.unique(np.loadtxt(self.datapath[i][-1]).astype(np.uint8)))
                 if l > self.num_seg_classes:
                     self.num_seg_classes = l
-        #print(self.num_seg_classes)
-
 
     def __getitem__(self, index):
         fn = self.datapath[index]
@@ -98,13 +92,10 @@ class PartDataset(data.Dataset):
         cls = self.classes[self.datapath[index][0]]
         point_set = np.loadtxt(fn[1]).astype(np.float32)
         seg = np.loadtxt(fn[2]).astype(np.int64)
-        #print(point_set.shape, seg.shape)
 
         choice = np.random.choice(len(seg), self.npoints, replace=True)
-        #resample
         point_set = point_set[choice, :]
         seg = seg[choice]
-        seg = seg + 1
 
         point_set = point_set.transpose(1, 0)
 
@@ -120,7 +111,7 @@ class PartDataset(data.Dataset):
 # Main function
 #==============================================================================
 def main(argv=None):
-    print('Hello! This is XXXXXX Program')
+    print('Hello! This is Data-loader Program')
 
     print('test')
     d = PartDataset(root='shapenetcore_partanno_segmentation_benchmark_v0', class_choice=['Chair'])

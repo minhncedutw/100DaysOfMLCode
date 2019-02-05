@@ -18,9 +18,12 @@
 - Why pointnet_pytorch they do not directly use cross-entropy? 
 
 ## Day 2(04March2019): Code PointNet using cross-entropy instead of log_softmax on pytorch framework
+[Source code](https://github.com/minhncedutw/pointnet1_pytorch.git)
 
 ## Day 3(05March2019): Code PointNet on fastai framework
+[Source code](https://github.com/minhncedutw/pointnet1_fastai.git)
 
 ## Questions: 
 
  - How to run pytorch network on cuda?
+ 
