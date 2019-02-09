@@ -96,18 +96,24 @@ tfms = tfms_from_model(f_model=f_model, sz=sz, aug_tfms=transforms_side_on, crop
 
 ## Day 7(09March2019): How learner.fit works?(fastai framework)
 
-learner.fit(lrs=lr, n_cycle=1, cycle_len=1)
-![](day7[fastai.fit]/1.png)
+`learner.fit(lrs=lr, n_cycle=1) # learning rate is constant`
+![](day7[fastai.fit]/0.png)
 
-![](day7[fastai.fit]/2.png)
+`learner.fit(lrs=lr, n_cycle=1, cycle_len=1) # learning rate is a curve, the frequency of the curve is 1`
+![](day7[fastai.fit]/11.png)
 
-![](day7[fastai.fit]/3.png)
+`learner.fit(lrs=lr, n_cycle=1, cycle_len=2) # => cycle of learning rate curve is 2 epochs, loop 1 times, epochs=2`
+![](day7[fastai.fit]/12.png)
+
+`learner.fit(lrs=lr, n_cycle=2, cycle_len=1) # => cycle of learning rate curve is 1 epochs, loop 2 times, epochs=2`
+![](day7[fastai.fit]/21.png)
+
+`learner.fit(lrs=lr, n_cycle=2, cycle_len=2) # => cycle of learning rate curve is 2 epochs, loop 2 times, epochs=4`
+![](day7[fastai.fit]/22.png)
+
+> total epochs = n_cycle * cycle_len
 
 ## Questions: 
  - How to run pytorch network on cuda?
- - How to run test/eval network?
- - How to use func fit(...)?
- - How to load train/val/tes data in fastai?
  - How to normalize/denormalize data?
- - Why learner.TTA returns different to learner.predict 
  - What is acc in training? (acc of train or val?)
