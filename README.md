@@ -11,7 +11,7 @@
 
 ## Day 2(2019May04): Practice YOLO2
 
-**Practice source code:** 
+**Practice source code:** https://github.com/minhncedutw/prac-keras-yolo2
 
 
 
