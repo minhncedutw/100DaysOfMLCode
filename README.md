@@ -29,3 +29,9 @@
 
 **Practice source code:** [PointNet model](.day5/pointnet_model.py)
 
+**Question?** 
+ - is `keras.layers.Dot` equal `Lamda(tf.matmul)`?
+```python
+net_transformed = Dot(axes=(2, 1))([net, ftransform])
+# [Source](https://github.com/HPInc/pointnet-keras/blob/master/model.py)
+```
