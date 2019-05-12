@@ -13,6 +13,13 @@
 #### --------------------------------------------------
 ## Day 3(2019May05): Practice YOLO2 keras - Design pattern of project
 
+**Some best practices:**
+ - refactored backend
+ - neat & concise learner
+ - neat configuration from `config.json`
+ - import absolute path
+ 
+
 **^^Design pattern of project:**
  - import absolute path
  - [refactor backend](https://github.com/minhncedutw/handbook/blob/master/python_tips/backend.py)
@@ -25,6 +32,19 @@
 ## Day 4(2019May06): Practice Unet fastai(lesson3-camvid)
 
 **Practice source code:** https://github.com/minhncedutw/prac-fastaiv1-dl1/blob/master/prac/prac_lesson3-camvid_2.ipynb
+
+**Fastai training pipeline**
+ - prepare:
+    + data-bunch
+    + architecture of model
+    + learner
+ - training:
+    + train small data-bunch(small images, often ~1/2 image size):
+        * freeze head layers. find learning rate. train with slice of lr1 = minimum_peak /10
+        * unfreeze head layers. train with slice of lrs = [lr1/400, lr1/4] 
+    + train big data-bunch(full size images):
+        * freeze head layers. find learning rate. train with slice of lr2 = minimum_peak /10
+        * unfreeze head layers. train with slice of lrs = [..., lr2/10] 
 
 #### --------------------------------------------------
 ## Day 5(2019May07): Practice PointNet keras - keras Lambda and keras Custom Layer
@@ -107,3 +127,11 @@ model.compile(loss=[pointnet_loss(xtran=model.get_layer(name='xtran2'), reg_weig
 ![](https://raw.githubusercontent.com/ritchieng/machine-learning-nanodegree/master/deep_learning/deep_neural_nets/dnn12.png)
 
 **Practice source code** [source](./prac_codes/day11)
+
+#### --------------------------------------------------
+## Day 12(2019May14): neat Learner template based on YOLO2 project
+
+**Practice source code** 
+ - [Learner template](./prac_codes/day12/LearnerTemplate.py)
+ - [bonus FeatureExtractor template](./prac_codes/day12/BackendTemplate.py)
+
