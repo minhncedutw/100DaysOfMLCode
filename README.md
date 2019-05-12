@@ -102,4 +102,8 @@ Good article: https://towardsdatascience.com/review-retinanet-focal-loss-object-
 model.compile(loss=[pointnet_loss(xtran=model.get_layer(name='xtran2'), reg_weight=0.001)], metrics=["accuracy"], optimizer=adam)
 ``` 
 
+**l2_loss**
+ - l2_loss= sum(t ** 2) / 2
+![](https://raw.githubusercontent.com/ritchieng/machine-learning-nanodegree/master/deep_learning/deep_neural_nets/dnn12.png)
+
 **Practice source code** [source](./prac_codes/day11)
