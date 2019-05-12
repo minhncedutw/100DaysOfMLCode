@@ -31,7 +31,7 @@
 
 **^^Lambda & Custom Layer** [practice](https://github.com/minhncedutw/handbook/blob/master/python_tips/keras_tips.md)
 
-**Practice source code:** [PointNet model](.prac_codes/day5/)
+**Practice source code:** [PointNet model](.prac_codes/day05/)
 
 **Question?** 
  - is `keras.layers.Dot` equal `Lamda(tf.matmul)`?
@@ -70,7 +70,29 @@ net_transformed = Dot(axes=(2, 1))([net, ftransform])
  - above process can loop with different size of images, but not sure whether it is able to improve
  - can select divide by 5, 6, ...10
 
-**Practice source code** [source](/prac_codes/day9/)
+**Practice source code** [source](/prac_codes/day09/)
 
 #### --------------------------------------------------
-## Day 10(2019May12): 
+## Day 10(2019May12): Focal loss
+
+**Cross-entropy**
+ - binary cross-entropy
+ - categorical cross-entropy
+ - weighted categorical cross-entropy
+ - focal:
+    + binary focal cross-entropy
+    + categorical focal cross-entropy
+    
+**Difference between `categorical_crossentropy` and `sparse_categorical_crossentropy`:**
+ - categorical_crossentropy: target is one-hot encoded
+ - sparse_categorical_crossentropy: target is integers
+Source: https://jovianlin.io/cat-crossentropy-vs-sparse-cat-crossentropy/
+    
+Good article: https://towardsdatascience.com/review-retinanet-focal-loss-object-detection-38fba6afabe4
+
+**Practice source code** [commit](https://github.com/minhncedutw/handbook/commit/fcd84c38acec1ffba043cf93bf4e0ead8da7a139)
+
+#### --------------------------------------------------
+## Day 11(2019May13): PointNet loss
+
+**Cross-entropy**
