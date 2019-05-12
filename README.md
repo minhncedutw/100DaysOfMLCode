@@ -31,7 +31,7 @@
 
 **^^Lambda & Custom Layer** [practice](https://github.com/minhncedutw/handbook/blob/master/python_tips/keras_tips.md)
 
-**Practice source code:** [PointNet model](.prac_codes/day05/)
+**Practice source code:** [PointNet model](./prac_codes/day05/)
 
 **Question?** 
  - is `keras.layers.Dot` equal `Lamda(tf.matmul)`?
@@ -70,7 +70,7 @@ net_transformed = Dot(axes=(2, 1))([net, ftransform])
  - above process can loop with different size of images, but not sure whether it is able to improve
  - can select divide by 5, 6, ...10
 
-**Practice source code** [source](/prac_codes/day09/)
+**Practice source code** [source](./prac_codes/day09/)
 
 #### --------------------------------------------------
 ## Day 10(2019May12): Focal loss
@@ -95,4 +95,11 @@ Good article: https://towardsdatascience.com/review-retinanet-focal-loss-object-
 #### --------------------------------------------------
 ## Day 11(2019May13): PointNet loss
 
-**Cross-entropy**
+**PointNet Loss** pass layer of network as argument to loss function:
+ - name a fixed name for the layer
+ - get the layer from model by name: model.get_layer(...)
+```python
+model.compile(loss=[pointnet_loss(xtran=model.get_layer(name='xtran2'), reg_weight=0.001)], metrics=["accuracy"], optimizer=adam)
+``` 
+
+**Practice source code** [source](./prac_codes/day11)
