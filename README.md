@@ -24,10 +24,13 @@ Article: [An introduction to explainable AI, and why we need it](https://www.fre
 - Local Interpretable Model-Agnostic Explanations (LIME)(**fairly common**): perturbing the inputs and watching how doing so affects the model's output. Based on that to build up a picture of which inputs the model is focusing on to make predictions.
 - Layer-wise Relevance Propagation (LRP): measure the relevance of each neural in a layer with the neutrals in previous layers and finally determine the relevance of individual inputs to output, then extract a meaningful subset of inputs that most affect the prediction.
 
+#### --------------------------------------------------
+## Day 3(2019June05): Practice "[xAI - LIME]"
+
 **Sample code** [LIME](https://github.com/marcotcr/lime)
 
 #### --------------------------------------------------
-## Day 3(2019June05): Teach "[Lacking Interpretability]"
+## Day 4(2019June06): Teach "[Lacking Interpretability - xAI]"
 
 
 [Lacking Interpretability]: https://github.com/minhncedutw/100DaysOfMLCode/commit/6d5322baa27c68c1d595a876fb792dbdb5557fad
