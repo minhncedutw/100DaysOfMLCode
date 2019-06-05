@@ -13,6 +13,7 @@
 ## Day 2(2019June04): Learn "[Explainable AI]"(which solves AI problem [Lacking Interpretability]")
 
 Article: [An introduction to explainable AI, and why we need it](https://www.freecodecamp.org/news/an-introduction-to-explainable-ai-and-why-we-need-it-a326417dd000/)
+
 ** Why the need for explainable models?**
 - Sometimes: neural networks deliver the wrong prediction; the neural network may be fooled by adversarial examples.
 - Thus, we want to know that is the model trustable, and when it is trustable.
