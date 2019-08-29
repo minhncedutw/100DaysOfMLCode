@@ -1,37 +1,111 @@
 # 100DaysOfTechLearning
 
 #### --------------------------------------------------
-## Day 1(2019June03): Watch [3 Limits of Artificial Intelligence](https://youtu.be/f5YvatzVWxA)
+## Day 1(2019Aug29): Imbalance data
 
-3 giới hạn của AI:
-- thiếu nhân quả(lack causal reasoning)
-- thiếu diễn giải(lack interpretability)
-- bị tổn thương bởi các ví dụ đối nghịch(vulnerable to adversarial example)
+**Classification:** 3 main approaches
+- data-based methods(sampling methods): attempt to rebalance the class distributions by resampling
+    + oversampling: duplicate a number of instances of minority classes. -> weakness: may overfitting.
+    + undersampling: remove a number of instances of majority classes. -> weakness: may lost important data.
+    + hybrid sampling: oversample and undersample simultaneously.
+- algorithm-based methods: put more emphasis on minority classes.
+    + cost-sensitive learning: assign varying cost to different classes. -> weakness: difficult to optimize?
+    + threshold-adjustment technique: ? -> weakness: difficult to optimize?
+- hybrid methods: combine data-based method with algorithm-based method.
+    
+**Questions:**
+ - What is **threshold-adjustment technique**?
+
+#### --------------------------------------------------
+## Day 2(2019Aug30): 
+
 
 
 #### --------------------------------------------------
-## Day 2(2019June04): Learn "[Explainable AI]"(which solves AI problem [Lacking Interpretability]")
+## Day 3(2019Aug31): 
 
-Article: [An introduction to explainable AI, and why we need it](https://www.freecodecamp.org/news/an-introduction-to-explainable-ai-and-why-we-need-it-a326417dd000/)
 
-**Why the need for explainable models?**
-- Sometimes: neural networks deliver the wrong prediction; the neural network may be fooled by adversarial examples.
-- Thus, we want to know that is the model trustable, and when it is trustable.
-- some domains prefer the reasons for predictions(such as banking, health care, ...) than prediction only.
+ 
+#### --------------------------------------------------
+## Day 4(2019Sep01): 
 
-**Approach**
-- Reversed Time Attention Model (RETAIN): 2 RNNs combined together to do 2-in-1: aggregate information to predict; use attention mechanism on each information to understand what the NN was focusing on.
-- Local Interpretable Model-Agnostic Explanations (LIME)(**fairly common**): perturbing the inputs and watching how doing so affects the model's output. Based on that to build up a picture of which inputs the model is focusing on to make predictions.
-- Layer-wise Relevance Propagation (LRP): measure the relevance of each neural in a layer with the neutrals in previous layers and finally determine the relevance of individual inputs to output, then extract a meaningful subset of inputs that most affect the prediction.
+
 
 #### --------------------------------------------------
-## Day 3(2019June05): Practice "[xAI - LIME]"
+## Day 5(2019Sep02): 
 
-**Sample code** [LIME](https://github.com/marcotcr/lime)
+
 
 #### --------------------------------------------------
-## Day 4(2019June06): Teach "[Lacking Interpretability - xAI]"
+## Day 6(2019Sep03): 
 
 
-[Lacking Interpretability]: https://github.com/minhncedutw/100DaysOfMLCode/commit/6d5322baa27c68c1d595a876fb792dbdb5557fad
-[Explainable AI]: https://www.freecodecamp.org/news/an-introduction-to-explainable-ai-and-why-we-need-it-a326417dd000/
+
+#### --------------------------------------------------
+## Day 7(2019Sep04): 
+
+## ----------------------------------------------------
+##                      1 STREAK
+## ----------------------------------------------------
+
+#### --------------------------------------------------
+## Day 8(2019Sep05): 
+
+
+#### --------------------------------------------------
+## Day 9(2019Sep06): 
+
+
+#### --------------------------------------------------
+## Day 10(2019Sep07): 
+
+
+#### --------------------------------------------------
+## Day 11(2019Sep08): 
+
+
+#### --------------------------------------------------
+## Day 12(2019Sep09): 
+
+
+#### --------------------------------------------------
+## Day 13(2019Sep10): 
+
+
+#### --------------------------------------------------
+## Day 14(2019Sep11): 
+
+## ----------------------------------------------------
+##                      2 STREAKs
+## ----------------------------------------------------
+
+#### --------------------------------------------------
+## Day 15(2019Sep12): 
+
+
+#### --------------------------------------------------
+## Day 16(2019Sep13): 
+
+
+#### --------------------------------------------------
+## Day 17(2019Sep14): 
+
+
+#### --------------------------------------------------
+## Day 18(2019Sep15): 
+
+
+#### --------------------------------------------------
+## Day 19(2019Sep16): 
+
+
+#### --------------------------------------------------
+## Day 20(2019Sep17): 
+
+
+#### --------------------------------------------------
+## Day 21(2019Sep18): 
+
+## ----------------------------------------------------
+##                      3 STREAKs
+## ----------------------------------------------------
