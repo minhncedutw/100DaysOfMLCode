@@ -8,6 +8,7 @@
     + oversampling: duplicate a number of instances of minority classes. -> weakness: may overfitting.
     + undersampling: remove a number of instances of majority classes. -> weakness: may lost important data.
     + hybrid sampling: oversample and undersample simultaneously.
+    + synthetic sampling(SMOTE): an oversampling method that synthetically manufacture instances of minority classes. -> over generalization and variance?
 - algorithm-based methods: put more emphasis on minority classes.
     + cost-sensitive learning: assign varying cost to different classes. -> weakness: difficult to optimize?
     + threshold-adjustment technique: ? -> weakness: difficult to optimize?
