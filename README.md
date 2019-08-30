@@ -18,9 +18,23 @@
  - What is **threshold-adjustment technique**?
 
 #### --------------------------------------------------
-## Day 2(2019Aug30): 
+## Day 2(2019Aug30): Learning rate schedule and decay
 
+**Lesson:** https://www.pyimagesearch.com/2019/07/22/keras-learning-rate-schedules-and-decay/
 
+**Keras training:**
+There are 3 kinds of learning rate schedules:
+ - step-based learning rate schedule(a).
+ - linear learning rate schedule(b).
+ - polynomial learning rate schedule(c).
+ 
+Keras has 2 training modes:
+ - training without learning rate decay/schedule(0).
+ - training with standard optimizer learning rate decay(1).
+
+Performance of training results: 
+ - (0) < (1) < (a), (b), (c)
+ - (a) may be lower than (b)
 
 #### --------------------------------------------------
 ## Day 3(2019Aug31): 
