@@ -37,9 +37,15 @@ Performance of training results:
  - (a) may be lower than (b)
 
 #### --------------------------------------------------
-## Day 3(2019Aug31): 
+## Day 3(2019Aug31): WPF-C# Serial Communication(UART)
 
+**Lesson:** [C# Serial Communication Sample](https://www.youtube.com/watch?v=I6uhMIFTF24)
 
+**Key steps:**
+ - Download and Install [Virtual Serial Port Driver - Create pairs of virtual COM ports linked by virtual null-modem cable](https://www.eltima.com/products/vspdxp/?gclid=CjwKCAjwkqPrBRA3EiwAKdtwk0fZBC-O-9aFVRRYszzTTXrPwYYvtPgt4zySYdK-Ep5vSizzVYoL7RoCmS0QAvD_BwE).
+ Then create a pair of COM ports.
+ - Download and Install [Terminal Emulator - Tera Term](https://osdn.net/projects/ttssh2/releases/). Then open Tera Term and connect to a port.
+ - Create a C# serial application and connect to the other port, then send data. If Tera Term receives and displays => SUCCESS.
  
 #### --------------------------------------------------
 ## Day 4(2019Sep01): 
