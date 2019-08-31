@@ -20,6 +20,8 @@
 #### --------------------------------------------------
 ## Day 2(2019Aug30): Learning rate schedule and decay
 
+![](files/day02/lr-schedules.png)
+
 **Lesson:** https://www.pyimagesearch.com/2019/07/22/keras-learning-rate-schedules-and-decay/
 
 **Keras training:**
