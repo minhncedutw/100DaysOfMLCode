@@ -49,14 +49,63 @@ Performance of training results:
  - Download and Install [RS232 Terminal Emulator - Termite](https://www.compuphase.com/software_termite.htm). Then open Tera Term and connect to a port.
  - Create a C# serial application and connect to the other port, then send data. If Tera Term receives and displays => SUCCESS.
  
-**Lesson:** [Create WPF UI Tutorials: 01 - The Basics](https://www.youtube.com/watch?v=Vjldip84CXQ&list=PLrW43fNmjaQVYF4zgsD0oL9Iv6u23PI6M)
+**Lecture Video:** [Create WPF UI Tutorials: 01 - The Basics](https://www.youtube.com/watch?v=Vjldip84CXQ&list=PLrW43fNmjaQVYF4zgsD0oL9Iv6u23PI6M)
 
 > It'd better to build WPF UI on Blend.
  
 #### --------------------------------------------------
-## Day 4(2019Sep01): 
+## Day 4(2019Sep01): WPF-C# Serial Communication + Git Commit Conventions
 
+### WPF-C#:
 
+**Practices** [Build WPF-C# Serial Sending](https://github.com/minhncedutw/wpf-serial-communication.git).
+
+**Notice:**
+ - WPF doesn't have SerialPort component like C#.
+ - To use SerialPort, we have to self-declare a global variable of SerialPort: 
+ ```WPF-C#
+ using System.IO.Ports;
+ ...
+    SerialPort serialPort = new SerialPort();
+ ```
+ - WPF can not add port to ComboBox by `AddRange(ports)` like C#, hence we have to manually and sequentially add ports:
+ ```
+    string[] ports = SerialPort.GetPortNames();
+            
+    foreach (string port in ports) cBoxComPort.Items.Add(port);
+ ```
+ - SerialPort does not have **default EventHandler** of receiving data. We have to self-define and add receiving handler to SerialPort properties manually:
+ ```WPF-C#
+    serialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(serialPort_DataRecieved);
+ ...
+    private delegate void UpdateUiTextDelegate(string text);
+    private void serialPort_DataRecieved(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+    {
+        // Collecting the characters received to our 'buffer' (string).
+        recievedData = serialPort.ReadExisting();
+
+        // Delegate a function to display the received data.
+        Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(DataWrited), recievedData);
+    }
+
+    private void DataWrited(string text)
+    {
+        tBoxInData.Text += text;
+    }
+ ``` 
+ - In EventHandler, we can not display data to component like this: `tBoxInData.Text += recievedData;`
+ We have to delegate a function to operate or display the received data out: `Dispatcher.Invoke(DispatcherPriority.Send, new UpdateUiTextDelegate(DataWrited), recievedData);`. 
+ - WPF can print messages at Output tab: `Console.WriteLine("Message!!!");`.
+ 
+**Lecture:** [WPF Serial Communication](https://www.codeproject.com/Articles/130109/Serial-Communication-using-WPF-RS232-and-PIC-Commu)
+
+**Reference Code:** [WPF Serial Communication](https://github.com/JohnnyPP/WPF-Serial-Communication-Advanced/blob/master/Serial%20Communication%20WPF/MainWindow.xaml.cs)
+
+### Git:
+**Git Commit Conventions:**
+ - [Lecture: How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+ - Start with subject action(verb): Add, Fix, Modify, Change, Remove, Release, ...
+![](files/day04/git-commit-samples.PNG)
 
 #### --------------------------------------------------
 ## Day 5(2019Sep02): 
